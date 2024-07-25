@@ -1,0 +1,78 @@
+{
+  "name": "electron-builder-repro8351",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron/notarize": "^2.3.2",
+    "centimaitre": "^1.0.4",
+    "electron": "31.2.1",
+    "electron-builder": "24.13.3",
+    "fs-jetpack": "^5.1.0"
+  },
+  "build": {
+    "appId": "build.electron.repro8351",
+    "directories": {
+      "output": "releases",
+      "app": "app"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "msi",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "publisherName": "Repro8351"
+    },
+    "msi": {
+      "runAfterFinish": false,
+      "perMachine": true
+    },
+    "nsis": {
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "oneClick": false
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "default",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "hardenedRuntime": true,
+      "entitlements": "app/entitlements.mac.plist",
+      "entitlementsInherit": "app/entitlements.mac.plist"
+    },
+    "dmg": {},
+    "linux": {
+      "artifactName": "${productName}-${version}-${arch}.AppImage",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "vendor": "Repro8351",
+      "category": "Utility",
+      "synopsis": "Repro issue 8351"
+    }
+  },
+  "scripts": {
+    "release": "cm release",
+    "start": "electron ./app"
+  }
+}

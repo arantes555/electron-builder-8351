@@ -1,0 +1,16 @@
+{
+  "name": "electron-builder-repro8351",
+  "productName": "ElectronBuilderRepro8351",
+  "identifier": "build.electron.repro8351",
+  "description": "Repro main application",
+  "homepage": "https://electron.build/",
+  "version": "1.0.0",
+  "author": "arantes555",
+  "copyright": "© 2024, arantes555",
+  "license": "MIT",
+  "main": "main.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

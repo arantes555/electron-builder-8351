@@ -1,0 +1,15 @@
+node_modules
+*.log
+.DS_Store
+Thumbs.db
+
+/releases/
+/tmp/
+
+.idea/
+
+.vscode
+
+test-data
+report.xml
+.npm
